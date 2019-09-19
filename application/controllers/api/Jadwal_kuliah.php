@@ -18,11 +18,11 @@ class Jadwal_kuliah extends REST_Controller
 
     public function index_get()
     {
-        $id = $this->get('id_jadwal_kuliah');
+        $id = $this->get('id');
         if ($id == null) {
             $jadwal = $this->jadwal->getJadwal();
         } else {
-            $jadwal = $this->ruangan->getJadwal($id);
+            $jadwal = $this->jadwal->getJadwal($id);
         }
 
         if ($jadwal) {

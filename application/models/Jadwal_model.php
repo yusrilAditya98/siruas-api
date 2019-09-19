@@ -20,7 +20,7 @@ class Jadwal_model extends CI_Model
             $this->db->join('mata_kuliah', 'jadwal_kuliah.kode_matkul=mata_kuliah.kode_matkul', 'left');
             $this->db->join('ruangan', 'jadwal_kuliah.id_ruangan=ruangan.id_ruangan', 'left');
             $this->db->join('pegawai', 'pegawai.nip=jadwal_kuliah.id_dosen', 'left');
-            $this->db->where('jadwal_kuliah', $id);
+            $this->db->where('jadwal_kuliah.id_jadwal_kuliah', $id);
             return $this->db->get()->result_array();
         }
     }
